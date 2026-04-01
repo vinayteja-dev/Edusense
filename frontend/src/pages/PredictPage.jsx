@@ -70,18 +70,18 @@ export default function PredictPage({ user, setResults }) {
 
   return (
     <div className="page">
-      <h1 className="page-title">🔮 Risk Prediction</h1>
+      <h1 className="page-title">Risk Prediction</h1>
       <p className="page-subtitle">Enter your academic details to check backlog & dropout risk</p>
 
-      {error && <div className="alert alert-error">⚠️ {error}</div>}
+      {error && <div className="alert alert-error">{error}</div>}
 
       <form onSubmit={handleSubmit}>
         <div className="grid-2">
           {/* Academic Performance */}
           <div className="card">
             <div className="card-header">
-              <h2 className="card-title">📚 Academic Performance</h2>
-              <div className="card-icon" style={{ background: '#e3f2fd', color: '#1565c0' }}>📝</div>
+              <h2 className="card-title">Academic Performance</h2>
+              <div className="card-icon" style={{ background: '#e3f2fd', color: '#1565c0' }}></div>
             </div>
 
             {/* Attendance Slider */}
@@ -172,8 +172,8 @@ export default function PredictPage({ user, setResults }) {
           {/* Personal & Support */}
           <div className="card">
             <div className="card-header">
-              <h2 className="card-title">👤 Personal & Support</h2>
-              <div className="card-icon" style={{ background: '#f3e5f5', color: '#7b1fa2' }}>🤝</div>
+              <h2 className="card-title">Personal & Support</h2>
+              <div className="card-icon" style={{ background: '#f3e5f5', color: '#7b1fa2' }}></div>
             </div>
 
             <div className="form-group">
@@ -183,9 +183,9 @@ export default function PredictPage({ user, setResults }) {
                 value={form.fee_status}
                 onChange={(e) => handleChange('fee_status', e.target.value)}
               >
-                <option value="paid">✅ Paid</option>
-                <option value="partial">⚠️ Partially Paid</option>
-                <option value="unpaid">❌ Unpaid</option>
+                <option value="paid">Paid</option>
+                <option value="partial">Partially Paid</option>
+                <option value="unpaid">Unpaid</option>
               </select>
             </div>
 
@@ -225,11 +225,11 @@ export default function PredictPage({ user, setResults }) {
             }}>
               <h4 style={{ fontSize: '0.82rem', color: '#1a6b6b', marginBottom: '8px' }}>Input Summary</h4>
               <div style={{ fontSize: '0.78rem', color: '#666', lineHeight: 1.8 }}>
-                <div>📊 Attendance: <strong>{form.attendance_pct}%</strong></div>
-                <div>📝 Avg Mids: <strong>{((form.mid1_marks + form.mid2_marks) / 2).toFixed(1)}/30</strong></div>
-                <div>🎓 GPA: <strong>{form.prev_sem_gpa}</strong></div>
-                <div>📋 Backlogs: <strong>{form.backlog_count}</strong></div>
-                <div>💰 Fees: <strong>{form.fee_status}</strong></div>
+                <div>Attendance: <strong>{form.attendance_pct}%</strong></div>
+                <div>Avg Mids: <strong>{((form.mid1_marks + form.mid2_marks) / 2).toFixed(1)}/30</strong></div>
+                <div>GPA: <strong>{form.prev_sem_gpa}</strong></div>
+                <div>Backlogs: <strong>{form.backlog_count}</strong></div>
+                <div>Fees: <strong>{form.fee_status}</strong></div>
               </div>
             </div>
           </div>
@@ -249,7 +249,7 @@ export default function PredictPage({ user, setResults }) {
                 Analyzing...
               </>
             ) : (
-              '🔮 Predict Now'
+              'Predict Now'
             )}
           </button>
         </div>

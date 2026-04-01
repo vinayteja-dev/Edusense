@@ -71,7 +71,7 @@ export default function Dashboard({ user }) {
             {user.name || user.username}
           </h1>
           <p style={{ opacity: 0.7, fontSize: '0.9rem' }}>
-            Roll No: {user.roll_number || user.username} • VNRVJIET CSE
+            Roll No: {user.roll_number || user.username} • VNRVJIET CSBS
           </p>
         </div>
       </div>
@@ -81,7 +81,7 @@ export default function Dashboard({ user }) {
         <div className="stat-tile stat-tile-blue animate-fade-in-up" style={{ animationDelay: '0s' }}>
           <div className="stat-tile-label">Attendance</div>
           <div className="stat-tile-value">{attendance}%</div>
-          <div className="stat-tile-sub">{attendance >= 75 ? '✅ Above threshold' : '⚠️ Below 75%'}</div>
+          <div className="stat-tile-sub">{attendance >= 75 ? 'Above threshold' : 'Below 75%'}</div>
         </div>
         <div className="stat-tile stat-tile-teal animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
           <div className="stat-tile-label">Current GPA</div>
@@ -91,7 +91,7 @@ export default function Dashboard({ user }) {
         <div className="stat-tile stat-tile-orange animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
           <div className="stat-tile-label">Backlogs</div>
           <div className="stat-tile-value">{backlogs}</div>
-          <div className="stat-tile-sub">{backlogs === 0 ? '🎉 No backlogs!' : `${backlogs} subject${backlogs > 1 ? 's' : ''}`}</div>
+          <div className="stat-tile-sub">{backlogs === 0 ? 'No backlogs!' : `${backlogs} subject${backlogs > 1 ? 's' : ''}`}</div>
         </div>
         <div className="stat-tile stat-tile-pink animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
           <div className="stat-tile-label">Avg Mid Marks</div>
@@ -105,7 +105,7 @@ export default function Dashboard({ user }) {
         <div className="grid-2" style={{ marginBottom: '28px' }}>
           <div className="card" style={{ textAlign: 'center' }}>
             <h3 style={{ fontSize: '0.9rem', color: '#666', marginBottom: '12px', fontWeight: 600 }}>
-              📚 Backlog Risk
+              Backlog Risk
             </h3>
             <div className={getRiskBadgeClass(studentData?.backlog_risk)}>
               {studentData?.backlog_risk || 'N/A'}
@@ -113,7 +113,7 @@ export default function Dashboard({ user }) {
           </div>
           <div className="card" style={{ textAlign: 'center' }}>
             <h3 style={{ fontSize: '0.9rem', color: '#666', marginBottom: '12px', fontWeight: 600 }}>
-              🚪 Dropout Risk
+              Dropout Risk
             </h3>
             <div className={getRiskBadgeClass(studentData?.dropout_risk)}>
               {studentData?.dropout_risk || 'N/A'}
@@ -125,21 +125,18 @@ export default function Dashboard({ user }) {
       {/* Quick Actions */}
       <div className="card">
         <div className="card-header">
-          <h2 className="card-title">⚡ Quick Actions</h2>
+          <h2 className="card-title">Quick Actions</h2>
         </div>
         <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
           <button className="btn btn-blue" onClick={() => navigate('/predict')}>
-            🔮 Get Prediction
-          </button>
-          <button className="btn btn-pink" onClick={() => navigate('/about')}>
-            ℹ️ About EduSense
+            Get Prediction
           </button>
         </div>
       </div>
 
       {!studentData && (
         <div className="alert alert-warning" style={{ marginTop: '20px' }}>
-          ⚠️ Your data wasn't found in the uploaded dataset. You can still use the Predict page to get manual predictions.
+          Your data wasn't found in the uploaded dataset. You can still use the Predict page to get manual predictions.
         </div>
       )}
     </div>

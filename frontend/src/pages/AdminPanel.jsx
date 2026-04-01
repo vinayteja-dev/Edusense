@@ -134,15 +134,15 @@ export default function AdminPanel() {
 
   return (
     <div className="page">
-      <h1 className="page-title">📊 Admin Panel</h1>
+      <h1 className="page-title">Admin Panel</h1>
       <p className="page-subtitle">Upload student data and train prediction models</p>
 
-      {error && <div className="alert alert-error">⚠️ {error}</div>}
+      {error && <div className="alert alert-error">{error}</div>}
 
       {/* Upload Section */}
       <div className="card" style={{ marginBottom: '24px' }}>
         <div className="card-header">
-          <h2 className="card-title">📁 Upload Student Data (CSV)</h2>
+          <h2 className="card-title">Upload Student Data (CSV)</h2>
         </div>
 
         <div
@@ -152,7 +152,7 @@ export default function AdminPanel() {
           onDrop={handleDrop}
           onClick={() => fileRef.current?.click()}
         >
-          <div className="upload-icon">📄</div>
+          <div className="upload-icon"></div>
           <p className="upload-text">Drag & drop your CSV file here</p>
           <p className="upload-hint">or click to browse • Accepts .csv files</p>
           <input
@@ -167,17 +167,17 @@ export default function AdminPanel() {
         {uploadResult && (
           <div className="animate-fade-in-up" style={{ marginTop: '24px' }}>
             <div className="alert alert-success">
-              ✅ {uploadResult.message}
+              {uploadResult.message}
             </div>
 
             {/* Column match status */}
             <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', marginBottom: '16px' }}>
               <span className="badge badge-green">
-                ✓ {uploadResult.matched_columns?.length || 0} columns matched
+                {uploadResult.matched_columns?.length || 0} columns matched
               </span>
               {uploadResult.unmatched_columns?.length > 0 && (
                 <span className="badge badge-orange">
-                  ⚠ {uploadResult.unmatched_columns.length} unmapped: {uploadResult.unmatched_columns.join(', ')}
+                  {uploadResult.unmatched_columns.length} unmapped: {uploadResult.unmatched_columns.join(', ')}
                 </span>
               )}
             </div>
@@ -250,7 +250,7 @@ export default function AdminPanel() {
                     Training Models...
                   </>
                 ) : (
-                  '🚀 Train Models Now'
+                  'Train Models Now'
                 )}
               </button>
             </div>
@@ -273,7 +273,7 @@ export default function AdminPanel() {
       {trainResult && (
         <div className="animate-fade-in-up">
           <div className="alert alert-success" style={{ marginBottom: '24px' }}>
-            🎉 Models trained successfully!
+            Models trained successfully!
           </div>
 
           <div className="grid-2">
@@ -281,7 +281,7 @@ export default function AdminPanel() {
             {trainResult.backlog && !trainResult.backlog.error && (
               <div className="card">
                 <div className="card-header">
-                  <h3 className="card-title">🎯 Backlog Predictor</h3>
+                  <h3 className="card-title">Backlog Predictor</h3>
                   <span className="badge badge-blue">Random Forest</span>
                 </div>
                 <div className="grid-2" style={{ gap: '12px', marginBottom: '16px' }}>
@@ -314,7 +314,7 @@ export default function AdminPanel() {
             {trainResult.dropout && !trainResult.dropout.error && (
               <div className="card">
                 <div className="card-header">
-                  <h3 className="card-title">🚪 Dropout Predictor</h3>
+                  <h3 className="card-title">Dropout Predictor</h3>
                   <span className="badge badge-purple">XGBoost</span>
                 </div>
                 <div className="grid-2" style={{ gap: '12px', marginBottom: '16px' }}>
@@ -351,7 +351,7 @@ export default function AdminPanel() {
               className="btn btn-outline"
               download
             >
-              📥 Download Processed Dataset
+              Download Processed Dataset
             </a>
           </div>
         </div>

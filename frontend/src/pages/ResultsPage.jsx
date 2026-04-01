@@ -65,7 +65,7 @@ export default function ResultsPage({ results }) {
   if (!results) {
     return (
       <div className="page" style={{ textAlign: 'center', paddingTop: '80px' }}>
-        <div style={{ fontSize: '4rem', marginBottom: '16px' }}>🔮</div>
+        <div style={{ fontSize: '4rem', marginBottom: '16px' }}></div>
         <h2 style={{ color: '#1a6b6b', marginBottom: '8px' }}>No Predictions Yet</h2>
         <p style={{ color: '#666', marginBottom: '24px' }}>Run a prediction first to see results here.</p>
         <button className="btn btn-primary" onClick={() => navigate('/predict')}>
@@ -116,14 +116,14 @@ export default function ResultsPage({ results }) {
 
   return (
     <div className="page">
-      <h1 className="page-title">📊 Prediction Results</h1>
+      <h1 className="page-title">Prediction Results</h1>
       <p className="page-subtitle">Your personalized academic risk assessment</p>
 
       {/* Risk Gauges */}
       <div className="grid-2" style={{ marginBottom: '28px' }}>
         <div className="card animate-bounce-in" style={{ textAlign: 'center', padding: '36px' }}>
           <h3 style={{ fontSize: '1rem', color: '#1a6b6b', marginBottom: '20px', fontWeight: 700 }}>
-            📚 Backlog Risk
+            Backlog Risk
           </h3>
           {backlog && !backlog.error ? (
             <>
@@ -151,7 +151,7 @@ export default function ResultsPage({ results }) {
 
         <div className="card animate-bounce-in" style={{ textAlign: 'center', padding: '36px', animationDelay: '0.2s' }}>
           <h3 style={{ fontSize: '1rem', color: '#1a6b6b', marginBottom: '20px', fontWeight: 700 }}>
-            🚪 Dropout Risk
+            Dropout Risk
           </h3>
           {dropout && !dropout.error ? (
             <>
@@ -182,7 +182,7 @@ export default function ResultsPage({ results }) {
         {backlog?.recommendation && (
           <div className="card animate-fade-in-up">
             <h3 style={{ fontSize: '1rem', marginBottom: '12px' }}>
-              📚 Backlog Recommendations
+              Backlog Recommendations
             </h3>
             <div className={`alert alert-${backlog.recommendation.color === 'green' ? 'success' : backlog.recommendation.color === 'orange' ? 'warning' : 'error'}`}>
               {backlog.recommendation.message}
@@ -198,7 +198,7 @@ export default function ResultsPage({ results }) {
         {dropout?.recommendation && (
           <div className="card animate-fade-in-up" style={{ animationDelay: '0.15s' }}>
             <h3 style={{ fontSize: '1rem', marginBottom: '12px' }}>
-              🚪 Dropout Recommendations
+              Dropout Recommendations
             </h3>
             <div className={`alert alert-${dropout.recommendation.color === 'green' ? 'success' : dropout.recommendation.color === 'orange' ? 'warning' : 'error'}`}>
               {dropout.recommendation.message}
@@ -216,12 +216,12 @@ export default function ResultsPage({ results }) {
       <div className="grid-2" style={{ marginBottom: '28px' }}>
         {backlog?.feature_contributions && (
           <div className="card">
-            {renderFeatureChart(backlog.feature_contributions, '📊 Backlog — Feature Contributions')}
+            {renderFeatureChart(backlog.feature_contributions, 'Backlog — Feature Contributions')}
           </div>
         )}
         {dropout?.feature_contributions && (
           <div className="card">
-            {renderFeatureChart(dropout.feature_contributions, '📊 Dropout — Feature Contributions')}
+            {renderFeatureChart(dropout.feature_contributions, 'Dropout — Feature Contributions')}
           </div>
         )}
       </div>
@@ -229,10 +229,10 @@ export default function ResultsPage({ results }) {
       {/* Actions */}
       <div style={{ textAlign: 'center', display: 'flex', gap: '12px', justifyContent: 'center' }}>
         <button className="btn btn-primary" onClick={() => navigate('/predict')}>
-          🔮 New Prediction
+          New Prediction
         </button>
         <button className="btn btn-outline" onClick={() => navigate('/dashboard')}>
-          🏠 Back to Dashboard
+          Back to Dashboard
         </button>
       </div>
 
@@ -244,7 +244,7 @@ export default function ResultsPage({ results }) {
         marginTop: '40px',
         fontStyle: 'italic'
       }}>
-        Powered by VNRVJIET CSE Department — EduSense
+        Powered by VNRVJIET CSBS Department — EduSense
       </p>
     </div>
   );

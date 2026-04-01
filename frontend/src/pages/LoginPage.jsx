@@ -30,7 +30,7 @@ export default function LoginPage({ onLogin }) {
       <div className="login-card">
         <div className="login-header">
           <div className="login-logo">ES</div>
-          <p className="login-college">VNRVJIET • CSE Department</p>
+          <p className="login-college">VNRVJIET • CSBS Department</p>
           <h1 className="login-title">EduSense</h1>
           <p className="login-tagline">Sensing academic trouble before it hits</p>
         </div>
@@ -40,13 +40,13 @@ export default function LoginPage({ onLogin }) {
             className={`login-tab ${tab === 'student' ? 'active' : ''}`}
             onClick={() => { setTab('student'); setError(''); }}
           >
-            🎓 Student
+            Student
           </button>
           <button
             className={`login-tab ${tab === 'admin' ? 'active' : ''}`}
             onClick={() => { setTab('admin'); setError(''); }}
           >
-            🔧 Admin
+            Admin
           </button>
         </div>
 
@@ -59,7 +59,7 @@ export default function LoginPage({ onLogin }) {
               id="login-username"
               type="text"
               className="form-input"
-              placeholder={tab === 'student' ? 'e.g., 21071A0001' : 'admin'}
+              placeholder={tab === 'student' ? 'e.g., 24071A3200' : 'admin'}
               value={username}
               onChange={(e) => setUsername(e.target.value)}
               required
@@ -81,7 +81,7 @@ export default function LoginPage({ onLogin }) {
 
           {error && (
             <div className="alert alert-error">
-              ⚠️ {error}
+              {error}
             </div>
           )}
 
@@ -111,6 +111,15 @@ export default function LoginPage({ onLogin }) {
             marginTop: '20px'
           }}>
             Use your Roll Number and password <strong>edusense123</strong>
+          </p>
+        )}
+        {tab === 'student' && (
+          <p style={{
+            textAlign: 'center',
+            fontSize: '0.85rem',
+            marginTop: '15px'
+          }}>
+            Don't have an account? <a href="#" style={{ color: '#1a6b6b', fontWeight: 'bold', textDecoration: 'none' }}>Sign Up</a>
           </p>
         )}
         {tab === 'admin' && (

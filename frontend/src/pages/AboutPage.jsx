@@ -35,7 +35,7 @@ export default function AboutPage() {
               Sensing academic trouble before it hits
             </p>
             <p style={{ fontSize: '0.85rem', opacity: 0.7, marginTop: '8px' }}>
-              VNRVJIET • CSE Department • Mini Project
+              VNRVJIET • CSBS Department • Mini Project
             </p>
           </div>
         </div>
@@ -174,7 +174,7 @@ export default function AboutPage() {
               <h4 style={{ fontSize: '1rem', fontWeight: 700, color: '#1a6b6b' }}>
                 Mrs. K. Bhagya Rekha
               </h4>
-              <p style={{ fontSize: '0.82rem', color: '#666' }}>CSE Department, VNRVJIET</p>
+              <p style={{ fontSize: '0.82rem', color: '#666' }}>CSBS Department, VNRVJIET</p>
             </div>
           </div>
         </div>

@@ -18,22 +18,21 @@ function Navbar({ user, onLogout }) {
         <div className="navbar-logo">ES</div>
         <div>
           <div className="navbar-title">EduSense</div>
-          <div className="navbar-subtitle">VNRVJIET • CSE Department</div>
+          <div className="navbar-subtitle">VNRVJIET • CSBS Department</div>
         </div>
       </div>
 
       <div className="navbar-links">
         {user.role === 'admin' ? (
           <>
-            <Link to="/admin" className={isActive('/admin')}>📊 Admin Panel</Link>
-            <Link to="/about" className={isActive('/about')}>ℹ️ About</Link>
+            <Link to="/admin" className={isActive('/admin')}>Admin Panel</Link>
+            <Link to="/about" className={isActive('/about')}>About</Link>
           </>
         ) : (
           <>
-            <Link to="/dashboard" className={isActive('/dashboard')}>🏠 Dashboard</Link>
-            <Link to="/predict" className={isActive('/predict')}>🔮 Predict</Link>
-            <Link to="/results" className={isActive('/results')}>📊 Results</Link>
-            <Link to="/about" className={isActive('/about')}>ℹ️ About</Link>
+            <Link to="/dashboard" className={isActive('/dashboard')}>Dashboard</Link>
+            <Link to="/predict" className={isActive('/predict')}>Predict</Link>
+            <Link to="/results" className={isActive('/results')}>Results</Link>
           </>
         )}
       </div>
@@ -50,7 +49,7 @@ function Navbar({ user, onLogout }) {
 function Footer() {
   return (
     <footer className="footer">
-      <p>© 2026 EduSense — Powered by <a href="#">VNRVJIET CSE Department</a></p>
+      <p>© 2026 EduSense — Powered by <a href="#">VNRVJIET CSBS Department</a></p>
       <p style={{ fontSize: '0.72rem', marginTop: '4px', opacity: 0.7 }}>
         Sensing academic trouble before it hits
       </p>
@@ -96,7 +95,6 @@ function AppContent() {
             <Route path="/dashboard" element={<Dashboard user={user} />} />
             <Route path="/predict" element={<PredictPage user={user} setResults={setResults} />} />
             <Route path="/results" element={<ResultsPage results={results} />} />
-            <Route path="/about" element={<AboutPage />} />
             <Route path="*" element={<Navigate to="/dashboard" replace />} />
           </>
         )}
