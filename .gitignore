@@ -1,0 +1,45 @@
+# ──────────────────────────────────────────
+#  EduSense — Root .gitignore
+# ──────────────────────────────────────────
+
+# ── Python / Backend ──
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+.venv/
+venv/
+env/
+.env
+
+# Backend: trained model files & uploaded data (runtime artefacts)
+backend/data/*.pkl
+backend/data/*.csv
+backend/data/training_results.json
+
+# ── Node / Frontend ──
+node_modules/
+frontend/node_modules/
+frontend/dist/
+frontend/build/
+.npm/
+*.tgz
+
+# ── IDEs & OS ──
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ── Misc ──
+*.log
+*.tmp
+*.bak
+.env.local
+.env.production
